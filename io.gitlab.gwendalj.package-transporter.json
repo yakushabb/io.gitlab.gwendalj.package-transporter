@@ -1,7 +1,7 @@
 {
     "app-id" : "io.gitlab.gwendalj.package-transporter",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "44",
+    "runtime-version" : "46",
     "sdk" : "org.gnome.Sdk",
     "command" : "package-transporter",
     "finish-args" : [
