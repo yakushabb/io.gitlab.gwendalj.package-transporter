@@ -47,6 +47,10 @@
                     "type" : "git",
                     "url" : "https://gitlab.com/GwendalJ/package-transporter",
                     "commit": "3e5184e4de3d805ba1edccfa60df61b44dd9425b"
+                },
+                {
+                    "type" : "patch",
+                    "path": "fix-appdata.patch"
                 }
             ]
         }

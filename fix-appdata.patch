@@ -1,0 +1,71 @@
+From be484e7259241cba5fe123e1a10e5f08a5bc2186 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Mon, 11 Nov 2024 16:49:08 +0300
+Subject: [PATCH] Fix appdata papercuts
+
+---
+ data/io.gitlab.gwendalj.package-transporter.appdata.xml.in | 22 +++++++++++++++++-----
+ data/io.gitlab.gwendalj.package-transporter.desktop.in     |  4 ++--
+ 2 files changed, 19 insertions(+), 7 deletions(-)
+
+diff --git a/data/io.gitlab.gwendalj.package-transporter.appdata.xml.in b/data/io.gitlab.gwendalj.package-transporter.appdata.xml.in
+index ff43064..5cc4331 100644
+--- a/data/io.gitlab.gwendalj.package-transporter.appdata.xml.in
++++ b/data/io.gitlab.gwendalj.package-transporter.appdata.xml.in
+@@ -1,13 +1,19 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<component type="desktop">
+-	<id>io.gitlab.gwendalj.package-transporter.desktop</id>
++<component type="desktop-application">
++  <id>io.gitlab.gwendalj.package-transporter</id>
+   <name>Package Transporter</name>
+   <summary>Transfer your applications across installations</summary>
+-	<content_rating type="oars-1.0" />
+-	<metadata_license>CC0-1.0</metadata_license>
+-	<project_license>GPL-3.0-or-later</project_license>
++  <content_rating type="oars-1.1" />
++  <metadata_license>CC0-1.0</metadata_license>
++  <project_license>GPL-3.0-or-later</project_license>
+   <url type="homepage">https://gitlab.com/GwendalJ/package-transporter</url>
++  <url type="bugtracker">https://gitlab.com/GwendalJ/package-transporter/-/issues</url>
++  <url type="vcs-browser">https://gitlab.com/GwendalJ/package-transporter</url>
+   <launchable type="desktop-id">io.gitlab.gwendalj.package-transporter.desktop</launchable>
++  <developer_name>Gwendal Janssoone</developer_name>
++  <developer id="io.gitlab.gwendalj">
++    <name>Gwendal Janssoone</name>
++  </developer>
+ 	<description>
+ 	  <p>Package Transporter is an utility to help you transfer your workspace from one installation to another. The application currently only feature baking up flatpak applications. Therefore it should not be use for production but only for testing and feedbacks 🙂️</p>
+     <p>Upcoming features :</p>
+@@ -26,6 +32,12 @@
+       <image>https://gitlab.com/GwendalJ/package-transporter/-/raw/master/screenshots/2.png</image>
+     </screenshot>
+   </screenshots>
++  <provides>
++    <id>io.gitlab.gwendalj.package-transporter.desktop</id>
++  </provides>
++  <replaces>
++    <id>io.gitlab.gwendalj.package-transporter.desktop</id>
++  </replaces>
+   <releases>
+     <release version="0.1.1" date="2023-08-31">
+       <description>
+diff --git a/data/io.gitlab.gwendalj.package-transporter.desktop.in b/data/io.gitlab.gwendalj.package-transporter.desktop.in
+index 7c6218b..b8fc584 100644
+--- a/data/io.gitlab.gwendalj.package-transporter.desktop.in
++++ b/data/io.gitlab.gwendalj.package-transporter.desktop.in
+@@ -1,9 +1,9 @@
+ [Desktop Entry]
+ Name=Package Transporter
+-Description=Transfer your applications across installations
++Comment=Transfer your applications across installations
+ Exec=package-transporter
+ Icon=io.gitlab.gwendalj.package-transporter
+ Terminal=false
+ Type=Application
+-Categories=Flatpak;Utility
++Categories=Utility;Archiving;
+ StartupNotify=true
+--
+libgit2 1.7.2
+
